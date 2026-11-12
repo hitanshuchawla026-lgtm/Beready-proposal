@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BREADY: Local Launch & Customer Acquisition Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6efe2;--cream2:#efe3cd;--brown:#3a2417;--ora:#b9622a;--grn:#5e7a4b;--mute:#6b5a4c;--line:#d8c8aa}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:62px}
+body{margin:0;font:16.5px/1.6 'DM Sans',system-ui,sans-serif;color:var(--brown);background:var(--cream)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.05;letter-spacing:-.02em}
+a{color:var(--ora)}
+nav{position:sticky;top:0;z-index:9;background:var(--brown);display:flex;align-items:center;gap:8px;padding:9px 16px}
+nav b{color:var(--cream);font:800 19px Fraunces,serif;margin-right:6px}
+#links{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}
+#links a{color:#e8dac0;text-decoration:none;font-size:13px;padding:6px 10px;border-radius:99px;white-space:nowrap}
+#links a:hover,#links a.on{background:var(--cream);color:var(--brown)}
+.btn,nav button{font:700 13px 'DM Sans';border:1.5px solid var(--cream);background:transparent;color:var(--cream);padding:6px 12px;border-radius:99px;cursor:pointer}
+nav button:hover,nav button.act{background:var(--cream);color:var(--brown)}
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--ora);width:0;z-index:10}
+.cover{padding:10vh 7vw 8vh;min-height:90vh;display:flex;flex-direction:column;justify-content:center;background:var(--brown);color:var(--cream);position:relative;overflow:hidden}
+.cover h1{font-size:clamp(46px,8.4vw,120px);font-weight:800;max-width:11ch}
+.cover h1 em{color:#e8a56e;font-style:italic;font-weight:600}
+.cover p{font-size:clamp(18px,2vw,24px);max-width:38ch;margin:22px 0 28px;color:#e8dac0}
+.cover small{display:block;color:#bfae92}
+.cover svg{position:absolute;right:-60px;bottom:-40px;width:min(520px,60vw);opacity:.95}
+section{padding:84px 7vw}section:nth-of-type(even){background:var(--cream2)}
+.head{max-width:860px;margin-bottom:34px}.head h2{font-size:clamp(34px,5.2vw,62px);font-weight:800}
+.head p{font-size:18px;color:var(--mute);margin:12px 0 0}
+.nt{display:inline-block;border-left:4px solid var(--ora);padding:2px 12px;font-size:14px;color:var(--mute);margin:0 0 18px;background:#fffaf0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#fffaf0;border:1px solid var(--line);border-top:4px solid var(--ora);border-radius:6px;padding:20px}
+.card:nth-child(3n+2){border-top-color:var(--grn)}.card:nth-child(3n){border-top-color:var(--brown)}
+.card h3{font-size:22px;margin-bottom:8px}.card p{margin:0 0 6px;color:var(--mute)}
+dl{margin:8px 0 0}dt{font-weight:700;font-size:13.5px;color:var(--ora);margin-top:9px}dd{margin:1px 0 0;font-size:15px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:#fffaf0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:760px}
+th{background:var(--brown);color:var(--cream);text-align:left;padding:10px 12px;font-weight:700}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700}
+[contenteditable=true]:focus{outline:2px solid var(--ora);background:#fff3d6}
+.pill{display:inline-block;border-radius:99px;padding:1px 10px;font-size:12px;font-weight:700;background:var(--grn);color:#fff;white-space:nowrap}
+.pill.i{background:#8a7a68}.pill.f{background:var(--ora)}.pill.s{background:#4c6d8a}.pill.p{background:#7a5a9a}.pill.v{background:#9a7a2a}
+.statement{font:600 clamp(24px,3.2vw,40px)/1.2 Fraunces,serif;max-width:24em;margin:0 0 24px;letter-spacing:-.02em}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.tabs .btn{color:var(--brown);border-color:var(--brown)}.tabs .btn.act{background:var(--brown);color:var(--cream)}
+.pan{display:none}.pan.on{display:block}
+.bars{display:grid;gap:12px;max-width:720px;margin-top:20px}.bars label{display:flex;justify-content:space-between;font-weight:700}
+.bars i{display:block;height:16px;background:var(--ora);border-radius:3px;transition:width .4s;margin-top:3px}.bars .b2 i{background:var(--grn)}.bars .b3 i{background:var(--brown)}
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px}
+.day{background:#fffaf0;border:1px solid var(--line);border-radius:6px;padding:10px;font-size:14px;border-left:5px solid var(--ora)}
+.day b{font:800 22px Fraunces,serif;display:block}.day[data-c=Offline]{border-left-color:var(--grn)}.day[data-c=Creators]{border-left-color:#7a5a9a}.day[data-c=Retention]{border-left-color:var(--brown)}.day[data-c=Ops]{border-left-color:#9a7a2a}.day small{color:var(--mute)}
+.end{background:var(--brown)!important;color:var(--cream)}.end .head p{color:#d8c8aa}.end .head h2{font-size:clamp(38px,6.4vw,84px)}.end .card{color:var(--brown)}
+footer{padding:18px 7vw;background:#241409;color:#bfae92;font-size:13px}
+@media(max-width:800px){section{padding:56px 5vw}#links{display:none}.cover svg{opacity:.25}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+@media print{nav,#bar,.tabs,.np{display:none!important}.pan{display:block!important}section{padding:26px 0;break-inside:avoid-page}.cover{min-height:0;padding:30px}.tbl{overflow:visible}table{min-width:0;font-size:10px}body{font-size:12.5px}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body>
+<div id="bar"></div>
+<nav><b>BREADY</b><div id="links"></div></nav>
+<header class="cover" id="cover">
+ <h1>From first look to <em>regular order.</em></h1>
+ <p>A local launch and customer acquisition plan for BREADY at DLF Galleria Market, Gurugram.</p>
+ <small>An answer to: “How would you make a Galleria café successful?”</small>
+ <small>Prepared by Prachi Chawla | Digital Marketing & Brand Growth Strategy</small>
+ <svg viewBox="0 0 400 300" aria-hidden="true"><g stroke="#f6efe2" stroke-width="4" stroke-linejoin="round" fill="none" opacity=".35"><path d="M40 130q0-70 160-70t160 70v14H40z"/><rect x="36" y="150" width="328" height="22" rx="11"/><path d="M44 176h312v16q-40 22-90 6t-90 6-90-6-42-6z"/><path d="M40 204h320v12q0 44-160 44T40 216z"/></g></svg>
+</header>
+<main id="m"></main>
+<footer><b>Disclaimer:</b> All budgets, estimates and growth targets mentioned in this proposal are indicative and subject to change based on actual business requirements and campaign performance. Competitor information has been sourced from publicly available listings and should be independently verified before making business decisions. Actual results may vary.</footer>
+<script>
+const T=(h,rows,id='')=>`<div class="tbl"><table ${id?`id="${id}"`:''}><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
+const R=s=>s.split('|').map(x=>x.split('='));
+const C=a=>`<div class="grid">${a.map(([h,p,r])=>`<article class="card"><h3>${h}</h3>${p?`<p>${p}</p>`:''}${r?`<dl>${R(r).map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl>`:''}</article>`).join('')}</div>`;
+const NT=t=>`<p class="nt">${t}</p>`;
+const L=(u,t)=>`<a href="${u}" target="_blank" rel="noopener">${t}</a>`;
+const O={C:'<span class="pill">Consultant</span>',F:'<span class="pill f">Founder</span>',S:'<span class="pill s">Staff</span>',P:'<span class="pill p">Photographer</span>',D:'<span class="pill v">Designer</span>',V:'<span class="pill i">Vendor</span>'};
+
+const WK=[
+['Week 1: Launch & Discovery',[
+['Opening-week controlled tasting','Objective=First trials from people already in Galleria|Audience=Shoppers, neighbouring staff|Steps=Small tasting portions with a QR to Maps and Instagram, handed out only where permitted|Budget=₹5,000–8,000 (food cost)|Outcome=Tasters who buy within the same visit|KPI=Sampling-to-purchase rate'],
+['Creator and reviewer tasting','Objective=Credible first reviews|Audience=Gurugram food followers|Steps=Invite 6–8 creators to the shop on a quiet slot, give each a unique code|Budget=₹5,000–10,000 (barter product)|Outcome=Visits traceable to a creator|KPI=Code redemptions, visits'],
+['Launch QR offer','Objective=Count real first-time customers|Audience=Everyone at the counter|Steps=Counter QR to a short offer page, redeem by showing the screen|Budget=₹2,000 (print)|Outcome=A first list of customers|KPI=Redemptions, new customers']]],
+['Week 2: Product Trial & Conversion',[
+['Signature trio spotlight','Objective=Make 3 hero items known|Audience=Nearby visitors, followers|Steps=One short video per hero item shot in-store, trial combo at a calculated price|Budget=₹3,000–5,000|Outcome=Hero items lead sales|KPI=Product-wise sales'],
+['Office lunch push','Objective=Weekday lunch orders|Audience=Nearby office staff|Steps=Flyers and a lunch combo at nearby offices, shared in office groups where allowed|Budget=₹3,000–5,000|Outcome=Weekday transactions|KPI=Weekday lunch transactions'],
+['Location ads (Meta)','Objective=Store visits and directions|Audience=Radius around Galleria|Steps=Short-radius Reels and Stories ads with direction button|Budget=₹10,000–15,000|Outcome=Direction requests|KPI=Cost per direction request']]],
+['Week 3: Community & Word of Mouth',[
+['Bring-a-friend offer','Objective=Second and third customers per visit|Audience=Students, young groups|Steps=A “come with a friend” offer redeemed at the counter|Budget=₹2,000–4,000 (discount cost)|Outcome=Group visits|KPI=Offer redemptions'],
+['Neighbour partnerships','Objective=Borrowed footfall|Audience=Gym, salon, retail teams|Steps=Partner codes and counter cards at 3–5 nearby businesses|Budget=₹2,000|Outcome=Partner-driven visits|KPI=Redemptions per partner'],
+['Guest content and favourites','Objective=Social proof|Audience=Followers, locals|Steps=Repost tagged guests, post top sellers from POS data|Budget=₹1,000–2,000|Outcome=Tagged posts|KPI=Tagged posts, saves']]],
+['Week 4: Retention & Repeat',[
+['Simple loyalty','Objective=Second visits|Audience=Week 1–3 customers|Steps=Stamp card or QR list with one clear reward|Budget=₹3,000 (print and reward cost)|Outcome=Returning customers|KPI=Repeat rate'],
+['Combo test','Objective=Profitable combos|Audience=All|Steps=Run two combos for a week each, compare margin|Budget=₹2,000–4,000|Outcome=A combo to keep|KPI=Combo share, margin'],
+['Review and scorecard','Objective=Decide what to continue|Audience=Founder, team|Steps=Review costs per customer, reviews, product sales|Budget=₹0 (time)|Outcome=Keep, fix, stop list|KPI=Cost per acquired customer']]]];
+
+const BUD=[['Creative and content production',10000,25000,50000],['Creator collaborations',5000,20000,60000],['Sampling and activations',8000,20000,40000],['Paid advertising',15000,40000,100000],['Printing and promotional material',5000,10000,20000],['Other execution costs',3000,8000,20000]];
+const CAL=`Offline|Opening day: tasting and QR offer live
+Digital|Post tasting reel, add photos to Maps
+Creators|Reviewer tasting 1
+Creators|Reviewer tasting 2
+Ops|Review week-1 sales by product
+Digital|Ask happy guests for Google reviews
+Retention|Week 1 scorecard
+Digital|Hero reel: sando
+Offline|Office lunch flyers and combo
+Digital|Meta store-visit ads go live
+Offline|Nearby office tasting
+Digital|Hero reel: subs
+Digital|Hero reel: waffle fries
+Retention|Week 2 scorecard, pause weak ads
+Offline|Bring-a-friend offer starts
+Offline|Gym and salon partner codes
+Digital|Repost guest content
+Creators|Compare creator results, repeat only the best
+Offline|Society or office group offer (with permission)
+Digital|Post customer favourites
+Retention|Week 3 scorecard
+Retention|Loyalty card starts
+Ops|Combo A live
+Digital|Story poll: pick next combo
+Offline|Weekend counter and table-card push
+Ops|Combo B live
+Digital|Review reply sweep
+Retention|Return offer to opted-in week-1 guests
+Ops|Calculate cost per customer and margin by product
+Retention|Month review with founder, plan next 60 days`.split('\n').map(x=>x.split('|'));
+
+const S=[
+['summary','Executive summary','The short answer: be easy to find, make the first trial cheap, and give people a reason to return.',
+ NT('Based on the brief: Sub, Japanese-style Sando, Matcha, Waffle Fries and drinks, opening from scratch.')+C([
+ ['Be easy to find','','Do=Google Business Profile, Maps photos, location-tagged content, clear signage|Why=Most first visits start with a search or a reel, then a map'],
+ ['Make trial easy','','Do=Controlled tastings, a counter QR offer, one calculated trial combo|Why=A new menu needs to be tasted before it’s trusted'],
+ ['Earn the second visit','','Do=Simple loyalty, week-1 follow-up, combos that work on margin|Why=Repeat guests lower the cost of every later sale'],
+ ['Spend small, measure everything','','Do=Pilot creators, short-radius ads, codes on every offer|Why=A new brand grows fastest when every rupee can be traced to a visit']])],
+['market','Market & competitor analysis','Outlets found in public listings in and around Galleria Market. Direct competitors are other sandwich-led shops; the rest compete for the same appetite and attention.',
+ NT('Research limits: prices are third-party listing figures of varying dates. Google ratings, review patterns and Instagram metrics were not collected here and must be checked before the meeting.')+
+ T(['Outlet','Type','What public sources say','Gap for BREADY','Source'],[
+ ['Cactus Lily','<span class="pill f">Direct</span>','Small sandwich shop in Galleria Market, noted for freshly baked bread','No Japanese-style sando, waffle fries or matcha in what’s listed',L('https://wanderlog.com/place/details/11491185/cactus-lily','Wanderlog')],
+ ['Double Roti Sandwich Bar','<span class="pill f">Direct (verify still open)</span>','SF-64. An older review reports competitive prices and a meal for two of ₹500, in a back lane','Low visibility, older listing',L('https://indianfoodfreak.com/?p=20271','Indian Food Freak')],
+ ['Waffle Wallah','<span class="pill i">Indirect</span>','SG-14, ground floor. Dessert waffles, about ₹350 for two on EazyDiner, board-game corner','Sweet-led. Savoury waffle fries and sandos are open ground',L('https://www.eazydiner.com/delhi-ncr/waffle-wallah-galleria-market-gurgaon-657899','EazyDiner')],
+ ['WAFL','<span class="pill i">Indirect</span>','SF120. Waffle-style dishes, about ₹900 for two, popular with laptop users','Sit-down, longer stays. BREADY can be grab-and-go',L('https://coworkingers.com/?p=28161','Coworkingers')],
+ ['Blue Tokai Coffee Roasters','<span class="pill i">Indirect</span>','Cafés at R/1 (2nd floor) and Galleria 1st floor. Store page lists 8:30 AM to 10 PM and food items','Strong coffee brand. BREADY owns matcha plus handheld food',L('https://stores.bluetokaicoffee.com/blue-tokai-coffee-roasters-galleria-market-cafe-dlf-gurugram-436747/Home','Store page')],
+ ['OMO Café','<span class="pill i">Indirect</span>','R-004, 2nd floor. Club sandwich noted, about ₹1,200 for two','Sit-down pricing. BREADY can win quick, lower-ticket visits',L('https://wanderon.in/blogs/best-cafes-in-gurugram-to-celebrate-valentine','WanderOn')],
+ ['Flurys','<span class="pill i">Indirect</span>','New 16-seater, 24-hour café at Galleria, reported August 2026','A fresh buzz competing for attention. BREADY needs a distinct product story',L('https://oteats.outlooktraveller.com/whats-new/flurys-gurugram-kolkatas-iconic-tea-room-brings-its-legacy-to-delhi-ncr','Outlook Traveller')],
+ ['Di Ghent Café','<span class="pill i">Adjacent</span>','Cross Point Mall, opposite the market. Listed around ₹1,700 for two','Premium sit-down. Not a quick-bite rival',L('https://housing.com/news/cafes-in-gurgaon-you-will-surely-love/','Housing.com')]])+
+ `<h3 style="margin:34px 0 12px;font-size:28px">How BREADY stands out</h3>`+C([
+ ['A narrow product point of view','From the listings reviewed, none pair Japanese-style sandos, subs, waffle fries and matcha in one handheld menu. Confirm with a site walk.'],
+ ['Speed and price of a quick bite','Most listed alternatives are sit-down cafés. BREADY can be the 10-minute stop.'],
+ ['Small Space. Strong Brand Experience.','At 260 sq. ft., every inch matters. A focused menu, efficient counter operations and a quick-service experience can turn a compact outlet into a high-potential customer destination.']])],
+['audience','Target audience & catchment','Six segments, each with a different reason to visit. Timings are hypotheses to check against POS timestamps.',
+ T(['Segment','Why they visit','What could attract them','Likely time','Channels','How to convert to a visit'],[
+ ['Office staff','Fast, filling lunch','Lunch combo','12:30–3 PM, 4–6 PM snack','Office groups (with permission), flyers, Maps, local ads','Weekday code at the counter'],
+ ['Students and young adults','Value and shareable food','Fries-and-drink share combo','Late afternoon, evenings, weekends','Instagram Reels, student creators','Creator code, bring-a-friend offer'],
+ ['Nearby residents','Convenience, regular spot','Neighbour offer, loyalty','Evenings and weekends','Society groups (with permission), Maps','Neighbour code, stamp card'],
+ ['Families and weekend visitors','A break between shopping','Mild options, easy-to-share fries','Weekend afternoons','Maps, short-radius ads, signage','Counter sign, simple combo'],
+ ['Food explorers','Novelty, something to post','Hero sando, matcha','Friday to Sunday evenings','Creators, saves, tags','A reason to tag, a unique hero'],
+ ['Japanese, sando and matcha fans','Specific product interest','Matcha plus sando pairing','Midday to evening','Maps search, Reels, saves','Clear photos and menu on Maps']])],
+['positioning','Positioning & brand awareness','Make the products the heroes.',
+ `<p class="statement">For young Gurugram food-lovers shopping or working around Galleria, BREADY is the quick stop for sandos, subs, waffle fries and matcha that look as good as they taste.</p>`+C([
+ ['Key differentiators','','Product=A focused four-item menu|Speed=Grab-and-go in a small shop|Look=Made to be photographed'],
+ ['Brand messaging','','Line 1=Small shop. Big bite.|Line 2=Sando, sub, fry, matcha. Done.|Tone=Young, direct, food-first'],
+ ['Why choose BREADY','','Reason=The only quick-bite counter pairing these four products among the listings reviewed. Verify on site.']])+
+ `<h3 style="margin:34px 0 12px;font-size:28px">Campaign concepts</h3>`+C([
+ ['Small Shop, Big Bite','Turn 260 sq. ft. into a story.','Use=Opening teaser, signage, counter lines'],
+ ['The Sando Lunch','The 30-minute lunch upgrade.','Use=Office outreach, weekday combo'],
+ ['Fry Pass','Waffle fries as the share item.','Use=Student groups, bring-a-friend'],
+ ['Matcha Break','Matcha plus sando pairing.','Use=Afternoon visits, creator content'],
+ ['First Bite, Real Face','Honest first reactions.','Use=Launch week content, reviews']])],
+['prelaunch','Pre-launch plan','Costs are indicative and exclude professional fees.',
+ T(['Activity','Execution','Est. cost','Expected outcome'],[
+ ['Google Business Profile','Claim, verify, add category, hours, menu, photos','₹0 (time)','Appears in Maps from day one'],
+ ['Local SEO','Keywords in profile, posts and captions (“sandwiches in Galleria Market”, “waffle fries Gurugram”)','₹0','Discoverable by search and Maps'],
+ ['Office and society outreach','Where permission exists, a short note and an opening-week offer','₹2,000–5,000 (print)','Names of people who will visit'],
+ ['Local business collaborations','Offer partner codes to gyms, salons, retail neighbours','₹1,000–2,000','Borrowed footfall'],
+ ['Sampling','Pre-opening tasting for neighbours and staff','₹3,000–5,000','Early word of mouth, honest feedback'],
+ ['Creator and blogger shortlist','Shortlist and invite a small group','₹0 plus tasting cost','Booked tastings'],
+ ['Instagram teaser','Brand reveal, hero close-ups, location, opening date','Production cost','Followers who plan to visit'],
+ ['Meta ads (pre-opening)','Short-radius awareness around Galleria','₹5,000–10,000','Local reach before day one'],
+ ['Interest list','Simple form or WhatsApp opt-in, only if operationally feasible','₹0','An early opening-day audience']])],
+['first30','First 30 days: customer acquisition','Week by week, each activity with a purpose, budget and measure.',
+ `<div class="tabs" id="wt"></div>`+WK.map((w,i)=>`<div class="pan${i?'':' on'}" data-w="${i}"><h3 style="margin-bottom:14px;font-size:26px">${w[0]}</h3>${C(w[1].map(([h,r])=>[h,'',r]))}</div>`).join('')],
+['offline','Offline & hyperlocal acquisition','Small, permission-led, and every idea ends at the counter.',
+ C([['Sampling near catchments','Small tastings near offices or common areas, with permission.','Brings=A taste, a QR and a map to the shop'],
+ ['Gym, salon and retail partnerships','A code for each partner’s team and customers.','Brings=A trusted recommendation'],
+ ['Society discovery','Short, permitted food-discovery offers for residents.','Brings=A neighbour offer redeemed in-store'],
+ ['QR first-order offer','Counter and table QR to a simple offer.','Brings=Trackable first-time customers'],
+ ['Table cards and flyers','Where permitted, with the offer and a map.','Brings=Reminder at the point of choice'],
+ ['Opening-week tasting','Controlled portions at the shop.','Brings=Trial at low risk'],
+ ['Community collaborations','Student groups, running clubs, local pages.','Brings=A group at a time'],
+ ['Small activation','A “fry of the day” board outside the shop.','Brings=Curious passers-by']])+NT('Skip expensive outdoor ads and big events unless a clear business case emerges.')],
+['creators','Influencer & community pilot','Start with a pilot, not a big spend.',
+ C([['Pilot size','','Creators=6–8 in total|Mix=3 food micro-creators, 2 student creators, 1–2 hyperlocal|Pay=Barter first, pay only the best performer'],
+ ['Shortlisting','','Check=Share of audience in Gurugram and NCR|Quality=Genuine comments, recent food content|Reach=Story views, not just followers'],
+ ['Deliverables','','Ask=1 Reel, 3 Stories, location tag, collab post'],
+ ['Tracking','','Code=A unique code per creator|Redeem=“Show the Reel” at the counter|Review=Visits and sales per creator after 7 days']])],
+['paid','Paid advertising','A small budget aimed at visits, calls and directions.',
+ T(['Channel','Objective','Audience','Creative','Measure'],[
+ ['Meta location campaign','Store visits and directions','Short radius around Galleria; widen after two weeks','Reels and Stories with a direction button','Cost per direction request'],
+ ['Reels and Stories ads','Product interest','Gurugram food interests, ages 18–35 as a start','Hero close-ups, first-bite reactions','Profile visits, saves'],
+ ['Google Maps and Search','Local discovery','People searching around Galleria','Profile photos, posts, offers','Calls, directions'],
+ ['Local food discovery','Credibility','Followers of local food pages','Creator and guest content','Code redemptions'],
+ ['Retargeting','Convert warm viewers','Video viewers and profile visitors, once the audience is big enough','Offer reminder','Offer redemptions']])+NT('Store visits, directions, calls and trackable orders come before likes and views.')],
+['gbp','Google Business Profile & delivery','Local discovery first. Delivery only when it is ready.',
+ C([['Google Business Profile','','Basics=Exact address, hours, phone, category|Photos=Real menu and product photos|Reviews=Ask via counter QR, reply to every review|Posts=Weekly offer or product post'],
+ ['Delivery on Zomato and Swiggy','','Timing=Launch after the counter runs smoothly, likely week 3 or 4|Menu=Test which items travel well, waffle fries may need vented packaging|Packaging=Sample test before listing'],
+ ['Delivery economics','','Contribution=Price minus food cost, packaging, platform commission, discounts and ad spend|Commission=Check current platform rates|Rule=More orders do not mean more profit']])],
+['budget','Campaign budget','Three indicative options in INR. Edit any figure in the first three columns.',
+ `<div class="tbl"><table id="bt"><tr><th>Line</th><th>Lean</th><th>Growth</th><th>Aggressive</th></tr>${BUD.map(r=>`<tr><td>${r[0]}</td>${r.slice(1).map(v=>`<td contenteditable="true" class="n">${v}</td>`).join('')}</tr>`).join('')}<tr><td>Total marketing spend (₹)</td><td id="t1"></td><td id="t2"></td><td id="t3"></td></tr></table></div><div class="bars" id="bb"></div>`],
+['kpis','Measurement & KPIs','What we track, and what it tells us to do.',
+ T(['Metric','How it’s captured','Decision it informs'],[
+ ['Store walk-ins and first-time customers','Counter QR and offer redemptions','Which channels bring new people'],['Daily transactions and average order value','POS','Whether offers lift basket size'],['Product-wise sales','POS','What to feature, drop or bundle'],['Sampling-to-purchase conversion','Tasting count vs same-visit purchases','Whether sampling is worth repeating'],['Offer redemptions','Codes and QR','Which partners and creators pay off'],['Repeat customer rate','Loyalty card or list','Whether to push retention'],['Direction requests and reviews','Google Business Profile','Local search health'],['Cost per acquired customer','Spend divided by new customers','What to scale or stop'],['Paid performance','Meta and Google dashboards','Budget shifts'],['Delivery orders and contribution margin','Platform reports plus costs','Whether to expand delivery']])+
+ NT('Rule of thumb: scale what brings customers below a cost the founder sets, fix what brings visits but no repeats, stop what brings neither.')],
+['scaling','Scaling after 30 days','A 60–90 day decision framework. Thresholds are for the founder to set once real data exists.',
+ C([['Strengthen the outlet','','Check=Stable daily transactions|Do=Fix queue, hero items, hours'],
+ ['Build repeat','','Check=Repeat rate rising|Do=Extend loyalty, member-only items'],
+ ['Grow delivery','','Check=Positive contribution margin per order|Do=Add delivery-only combos'],
+ ['Expand partnerships','','Check=Partners with steady redemptions|Do=Keep the top few, drop the rest'],
+ ['Test products and combos','','Check=Best-sellers and margin|Do=Rotate one limited item a month'],
+ ['Another location','','Check=Demand, operations and unit economics are proven|Do=Only then plan a second outlet or a delivery-only model']])],
+['roadmap','Execution roadmap & responsibilities','Not everything sits with one marketer. Owners are shown for each task.',
+ T(['Activity','Timeline','Owner','Resources','Deliverable','Success metric'],[
+ ['Maps profile and local SEO','Pre-launch',O.C,'Menu, photos','Live profile','Profile views, directions'],
+ ['Product and shop photography','Pre-launch',O.P,'Menu ready, shop set up','Photo and video bank','Used in profile and ads'],
+ ['Logo, menu board, QR cards','Pre-launch',O.D+' '+O.V,'Brand files, print vendor','Printed material','Ready by opening'],
+ ['Tasting set-up and permissions','Week 1',O.F+' '+O.S,'Food, staff time','Controlled tasting','Sampling-to-purchase'],
+ ['Creator shortlist and briefs','Week 1',O.C,'Barter products','6–8 invites','Redemptions per creator'],
+ ['Counter QR and offer handling','Weeks 1–4',O.S,'Training, POS notes','Offers logged','Redemption count'],
+ ['Meta ads','Weeks 2–3',O.C,'Ad budget, creatives','Live campaigns','Cost per direction request'],
+ ['Office and partner outreach','Weeks 2–3',O.C+' '+O.F,'Print, relationships','3–5 partners','Redemptions per partner'],
+ ['Combo pricing decisions','Weeks 2–4',O.F,'Food cost data','Two tested combos','Combo margin'],
+ ['Loyalty card','Week 4',O.C+' '+O.V,'Printing','Live loyalty','Repeat rate'],
+ ['Month review','Week 4',O.C+' '+O.F,'POS and ad data','Keep, fix, stop list','Next 60-day plan']])+NT('Opening date and timeline to be confirmed with the founder.')],
+['calendar','30-day execution calendar','Day 1 is opening day. Click any cell to edit.',
+ `<div class="tabs" id="cf"></div><div class="cal" id="cal"></div>`]];
+
+const m=document.getElementById('m'),L2=document.getElementById('links');
+m.innerHTML=S.map(([id,t,sub,body])=>`<section id="${id}"><div class="head"><h2>${t}</h2><p>${sub}</p></div>${body}</section>`).join('')+
+`<section class="end" id="closing"><div class="head"><h2>How BREADY becomes Galleria’s next regular stop.</h2><p>Open with a clear product point of view, make the first trial easy, track every offer, and put money only behind what brings people through the door. Scale after the numbers say so.</p></div>
+<p>Prepared by <b>Prachi Chawla</b><br>Digital Marketing | Content Strategy | CRM & Campaign Management</p></section>`;
+L2.innerHTML=[['cover','Cover'],...S.map(s=>[s[0],s[1].split(':')[0].split(' & ')[0].replace('Target audience','Audience').replace('Positioning','Positioning')]),['closing','Close']].map(([i,t])=>`<a href="#${i}">${t}</a>`).join('');
+// week tabs
+const wt=document.getElementById('wt'),pans=[...document.querySelectorAll('.pan')];
+WK.forEach((w,i)=>{const b=document.createElement('button');b.className='btn'+(i?'':' act');b.textContent=w[0].split(':')[0];b.onclick=()=>{[...wt.children].forEach((x,j)=>x.classList.toggle('act',j==i));pans.forEach((p,j)=>p.classList.toggle('on',j==i))};wt.append(b)});
+// calendar
+const cal=document.getElementById('cal'),cf=document.getElementById('cf');
+CAL.forEach((d,i)=>{const e=document.createElement('div');e.className='day';e.dataset.c=d[0];e.innerHTML=`<b>${i+1}</b><small>${d[0]}</small><div contenteditable="true">${d[1]}</div>`;cal.append(e)});
+['All','Digital','Offline','Creators','Retention','Ops'].forEach(f=>{const b=document.createElement('button');b.className='btn'+(f=='All'?' act':'');b.textContent=f;b.onclick=()=>{[...cf.children].forEach(x=>x.classList.toggle('act',x==b));[...cal.children].forEach(d=>d.hidden=f!='All'&&d.dataset.c!=f)};cf.append(b)});
+// budget
+const bt=document.getElementById('bt'),bb=document.getElementById('bb'),fmt=n=>'₹'+n.toLocaleString('en-IN');
+const calc=()=>{const t=[0,0,0];[...bt.querySelectorAll('tr')].slice(1,-1).forEach(r=>[...r.querySelectorAll('.n')].forEach((c,i)=>t[i]+=parseInt(c.textContent.replace(/\D/g,''))||0));t.forEach((v,i)=>document.getElementById('t'+(i+1)).textContent=fmt(v));const mx=Math.max(...t,1);bb.innerHTML=['Lean','Growth','Aggressive'].map((n,i)=>`<div class="b${i+1}"><label>${n}<span>${fmt(t[i])}</span></label><i style="width:${t[i]/mx*100}%"></i></div>`).join('')};
+bt.addEventListener('input',calc);calc();
+// progress, nav
+const bar=document.getElementById('bar'),as=[...L2.children],secs=[...document.querySelectorAll('header,section')];
+addEventListener('scroll',()=>{bar.style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+'%';let k=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<120)k=i});as.forEach((a,i)=>a.classList.toggle('on',i==k))},{passive:true});
+</script></body></html>
